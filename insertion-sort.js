@@ -1,9 +1,14 @@
 function insertionSort(array) {
-	/*
-	 ** For each element in the array, swap it with the element
-	 ** before it over and over as long as the element before it
-	 ** is bigger
-	 */
+
+	for(let i = 1; i < array.length; i++){
+		let now = array[i]
+		let before = i-1
+		while(before > -1 && now < array[before]){
+			array[before+1] = array[before]
+			before -= 1;
+		}
+	array[before+1] = now
+	}
 
 	return array;
 }
